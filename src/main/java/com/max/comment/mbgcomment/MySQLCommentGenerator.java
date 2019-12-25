@@ -58,6 +58,7 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         method.addJavaDocLine(" * 获取" + remarks);
         method.addJavaDocLine(" */");
     }
+
     @Override
     public void addSetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
