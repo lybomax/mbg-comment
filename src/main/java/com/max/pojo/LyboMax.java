@@ -1,12 +1,12 @@
 package com.max.pojo;
 
 /**
- * a表
+ * 
  *
  * @author lyy
- * @date   2019/12/25
+ * @date   2019/12/26
  */
-public class User {
+public class LyboMax {
     /**
      * ID
      */
@@ -15,12 +15,12 @@ public class User {
     /**
      * 姓名
      */
-    private Integer name;
+    private String name;
 
     /**
-     * 信用证编号
+     * 年龄
      */
-    private Integer lcnb;
+    private Integer age;
 
     /**
      * 获取ID
@@ -39,28 +39,28 @@ public class User {
     /**
      * 获取姓名
      */
-    public Integer getName() {
+    public String getName() {
         return name;
     }
 
     /**
      * 设置姓名
      */
-    public void setName(Integer name) {
+    public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 获取信用证编号
+     * 获取年龄
      */
-    public Integer getLcnb() {
-        return lcnb;
+    public Integer getAge() {
+        return age;
     }
 
     /**
-     * 设置信用证编号
+     * 设置年龄
      */
-    public void setLcnb(Integer lcnb) {
-        this.lcnb = lcnb;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

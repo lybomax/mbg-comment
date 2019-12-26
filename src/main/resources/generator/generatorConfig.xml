@@ -39,7 +39,7 @@
 
         <!-- 生成 XML 的位置 -->
         <sqlMapGenerator targetPackage="mapping"
-                         targetProject="C:\Users\Max\Desktop\mbg-comment-master\src\main\resources">
+                         targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
