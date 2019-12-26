@@ -12,7 +12,6 @@ import java.util.List;
 /**
  * Runs MBG completely with Java.
  *
- * @see <a href="http://www.mybatis.org/generator/running/runningWithJava.html">Running MyBatis Generator With Java</a>
  */
 public class Generator {
 
