@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Runs MBG completely with Java.
- *
+ * @author Lyy
  */
 public class Generator {
 

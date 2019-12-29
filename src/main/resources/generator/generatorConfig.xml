@@ -50,7 +50,7 @@
         </javaClientGenerator>
 
         <!-- 设置数据库的表名和实体类名 -->
-        <table tableName="lyboMax" domainObjectName="LyboMax">
+        <table tableName="user" domainObjectName="User">
             <!-- generatedKey用于生成生成主键的方法 -->
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"/>
         </table>

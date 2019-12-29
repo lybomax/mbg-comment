@@ -1,12 +1,12 @@
 package com.max.pojo;
 
 /**
- * 
+ * 用户
  *
  * @author lyy
- * @date   2019/12/26
+ * @date   2019/12/27
  */
-public class LyboMax {
+public class User {
     /**
      * ID
      */
@@ -21,6 +21,11 @@ public class LyboMax {
      * 年龄
      */
     private Integer age;
+
+    /**
+     * 性别
+     */
+    private String sex;
 
     /**
      * 获取ID
@@ -62,5 +67,19 @@ public class LyboMax {
      */
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    /**
+     * 获取性别
+     */
+    public String getSex() {
+        return sex;
+    }
+
+    /**
+     * 设置性别
+     */
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }
