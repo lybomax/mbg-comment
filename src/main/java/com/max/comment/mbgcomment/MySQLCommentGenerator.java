@@ -43,7 +43,7 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
 
     @Override
     public void addFieldComment(Field field, IntrospectedTable introspectedTable, IntrospectedColumn introspectedColumn) {
-        // 获取列注释
+        // 获取列名称注释
         String remarks = introspectedColumn.getRemarks();
         field.addJavaDocLine("/**");
         field.addJavaDocLine(" * " + remarks);
@@ -53,6 +53,7 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
     @Override
     public void addGetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
+        // 获取Getter注释
         String remarks = introspectedColumn.getRemarks();
         method.addJavaDocLine("/**");
         method.addJavaDocLine(" * 获取" + remarks);
@@ -62,6 +63,7 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
     @Override
     public void addSetterComment(Method method, IntrospectedTable introspectedTable,
                                  IntrospectedColumn introspectedColumn) {
+        // 获取Setter注释
         String remarks = introspectedColumn.getRemarks();
         method.addJavaDocLine("/**");
         method.addJavaDocLine(" * 设置" + remarks);
