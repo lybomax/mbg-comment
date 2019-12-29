@@ -5,12 +5,18 @@ import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.Method;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
+import org.mybatis.generator.internal.util.StringUtility;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
 public class MySQLCommentGenerator extends EmptyCommentGenerator {
+
+    //开始的分隔符，例如mysql为`，sqlserver为[
+    private String beginningDelimiter = "";
+    //结束的分隔符，例如mysql为`，sqlserver为]
+    private String endingDelimiter = "";
 
     private Properties properties;
 
@@ -48,6 +54,21 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         field.addJavaDocLine("/**");
         field.addJavaDocLine(" * " + remarks);
         field.addJavaDocLine(" */");
+
+        //添加注解
+//        for (IntrospectedColumn column : introspectedTable.getPrimaryKeyColumns()) {
+//            if (introspectedColumn == column) {
+//                field.addAnnotation("@Id");
+//                break;
+//            }
+//        }
+//        String column = introspectedColumn.getActualColumnName();
+//        if (StringUtility.stringContainsSpace(column) || introspectedTable.getTableConfiguration().isAllColumnDelimitingEnabled()) {
+//            column = introspectedColumn.getContext().getBeginningDelimiter()
+//                    + column
+//                    + introspectedColumn.getContext().getEndingDelimiter();
+//        }
+//        field.addAnnotation("@Column(name = \"" + getDelimiterName(column) + "\")");
     }
 
     @Override
@@ -68,5 +89,13 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         method.addJavaDocLine("/**");
         method.addJavaDocLine(" * 设置" + remarks);
         method.addJavaDocLine(" */");
+    }
+
+    public String getDelimiterName(String name) {
+        StringBuilder nameBuilder = new StringBuilder();
+        nameBuilder.append(beginningDelimiter);
+        nameBuilder.append(name);
+        nameBuilder.append(endingDelimiter);
+        return nameBuilder.toString();
     }
 }

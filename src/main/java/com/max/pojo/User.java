@@ -4,7 +4,7 @@ package com.max.pojo;
  * 用户
  *
  * @author lyy
- * @date   2019/12/27
+ * @date   2019/12/29
  */
 public class User {
     /**
