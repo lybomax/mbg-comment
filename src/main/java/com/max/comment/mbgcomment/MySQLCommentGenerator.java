@@ -5,7 +5,9 @@ import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.Field;
 import org.mybatis.generator.api.dom.java.Method;
+import org.mybatis.generator.api.dom.java.Parameter;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
+import org.mybatis.generator.internal.util.StringUtility;
 
 import java.util.Calendar;
 import java.util.Properties;
@@ -76,6 +78,24 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         method.addJavaDocLine("/**");
         method.addJavaDocLine(" * 获取" + remarks);
         method.addJavaDocLine(" */");
+        // 获取Getter注释  + @return
+//        StringBuilder sb = new StringBuilder();
+//        method.addJavaDocLine("/**");
+//        if (StringUtility.stringHasValue(introspectedColumn.getRemarks())) {
+//            sb.append(" * 获取");
+//            sb.append(introspectedColumn.getRemarks());
+//            method.addJavaDocLine(sb.toString());
+//            method.addJavaDocLine(" *");
+//        }
+//        sb.setLength(0);
+//        sb.append(" * @return ");
+//        sb.append(introspectedColumn.getActualColumnName());
+//        if (StringUtility.stringHasValue(introspectedColumn.getRemarks())) {
+//            sb.append(" - ");
+//            sb.append(introspectedColumn.getRemarks());
+//        }
+//        method.addJavaDocLine(sb.toString());
+//        method.addJavaDocLine(" */");
     }
 
     @Override
@@ -86,6 +106,25 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         method.addJavaDocLine("/**");
         method.addJavaDocLine(" * 设置" + remarks);
         method.addJavaDocLine(" */");
+        // 获取Setter注释 +@param
+//        StringBuilder sb = new StringBuilder();
+//        method.addJavaDocLine("/**");
+//        if (StringUtility.stringHasValue(introspectedColumn.getRemarks())) {
+//            sb.append(" * 设置");
+//            sb.append(introspectedColumn.getRemarks());
+//            method.addJavaDocLine(sb.toString());
+//            method.addJavaDocLine(" *");
+//        }
+//        Parameter parm = method.getParameters().get(0);
+//        sb.setLength(0);
+//        sb.append(" * @param ");
+//        sb.append(parm.getName());
+//        if (StringUtility.stringHasValue(introspectedColumn.getRemarks())) {
+//            sb.append(" ");
+//            sb.append(introspectedColumn.getRemarks());
+//        }
+//        method.addJavaDocLine(sb.toString());
+//        method.addJavaDocLine(" */");
     }
 
     public String getDelimiterName(String name) {
