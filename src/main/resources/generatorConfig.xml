@@ -25,11 +25,16 @@
 
         <!-- 配置数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://39.97.101.165:3306/test?characterEncoding=utf-8"
+                        connectionURL="jdbc:mysql://39.97.101.165:3306/test01?characterEncoding=utf-8"
                         userId="root" password="123456">
             <!-- 设置 useInformationSchema 属性为 true -->
             <property name="useInformationSchema" value="true" />
         </jdbcConnection>
+
+<!--        <jdbcConnection driverClass="com.ibm.db2.jcc.DB2Driver"-->
+<!--                        connectionURL="jdbc:db2://119.23.38.230:50001/elcsdb:currentSchema=ELCSADM;" userId="db2inst1"-->
+<!--                        password="db2inst1">-->
+<!--        </jdbcConnection>-->
 
         <!-- 生成实体的位置 -->
         <javaModelGenerator targetPackage="com.max.pojo"
