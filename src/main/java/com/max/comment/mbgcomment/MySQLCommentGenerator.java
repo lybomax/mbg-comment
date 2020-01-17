@@ -1,5 +1,6 @@
 package com.max.comment.mbgcomment;
 
+import org.apache.commons.lang.time.DateFormatUtils;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.dom.java.Field;
@@ -7,8 +8,7 @@ import org.mybatis.generator.api.dom.java.Method;
 import org.mybatis.generator.api.dom.java.TopLevelClass;
 import org.mybatis.generator.internal.util.StringUtility;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Properties;
 
 public class MySQLCommentGenerator extends EmptyCommentGenerator {
@@ -33,8 +33,6 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
     @Override
     public void addModelClassComment(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
         String author = properties.getProperty("author");
-        String dateFormat = properties.getProperty("dateFormat", "yyyy年MM月dd");
-        SimpleDateFormat dateFormatter = new SimpleDateFormat(dateFormat);
 
         // 获取表注释
         String remarks = introspectedTable.getRemarks();
@@ -43,7 +41,7 @@ public class MySQLCommentGenerator extends EmptyCommentGenerator {
         topLevelClass.addJavaDocLine(" * " + remarks);
         topLevelClass.addJavaDocLine(" *");
         topLevelClass.addJavaDocLine(" * @author " + author);
-        topLevelClass.addJavaDocLine(" * @date   " + dateFormatter.format(new Date()));
+        topLevelClass.addJavaDocLine(" * @date " + DateFormatUtils.format(Calendar.getInstance(), "yyyy年MM月dd日 HH:mm:ss"));
         topLevelClass.addJavaDocLine(" */");
     }
 
